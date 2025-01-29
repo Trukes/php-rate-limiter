@@ -40,12 +40,7 @@ final class PhpRateLimiter implements PhpRateLimiterInterface
     {
         $cacheItem = $this->cache->get($this->getFullNameKey($key)) ?? [];
 
-        $hit = Hit::fromArray(
-            [
-                ...$cacheItem,
-                'key' => $key
-            ]
-        );
+        $hit = Hit::fromArray(array_merge($cacheItem, ['key' => $key]));
 
         if($hit->hits() >= $this->config->maxRequestsByTimeframe()){
             throw new LimitExceededException('Limit Exceeded');
