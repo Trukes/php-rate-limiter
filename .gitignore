@@ -1,3 +1,6 @@
 .phpunit.cache/
-vendor
+vendor/
 composer.lock
+
+.idea/*
+.DS_Store
