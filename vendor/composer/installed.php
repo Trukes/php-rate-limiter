@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'trukes/php-rate-limiter',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'eadfb7f848b4ceaa1e347af2d61abfb7e03ae729',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -272,9 +272,9 @@
             'dev_requirement' => true,
         ),
         'trukes/php-rate-limiter' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'eadfb7f848b4ceaa1e347af2d61abfb7e03ae729',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
