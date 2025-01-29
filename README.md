@@ -41,6 +41,16 @@ try {
 $rateLimiter->reset($key);
 ```
 
+### Configuration
+You are able to provider configurations to fit your needs:
+```php
+new Config(
+    prefix: 'your-prefix',
+    maxRequestsByTimeframe: 10,
+    timeframeInSeconds: 1
+);
+```
+
 ### Testing
 
 ```bash
