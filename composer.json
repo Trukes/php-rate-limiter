@@ -1,0 +1,43 @@
+{
+    "name": "trukes/php-rate-limiter",
+    "description": "A lightweight, flexible rate-limiting library for PHP. Manage access limits by user, IP, or custom keys with support for sliding and fixed windows. Compatible with Redis, MySQL, and file-based storage. Ideal for controlling API usage and preventing abuse.",
+    "keywords": [
+        "trukes",
+        "php-rate-limiter"
+    ],
+    "homepage": "https://github.com/trukes/php-rate-limiter",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Pedro Carmo",
+            "email": "pedro.m.a.carmo@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "psr/simple-cache": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trukes\\PhpRateLimiter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Trukes\\PhpRateLimiter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
