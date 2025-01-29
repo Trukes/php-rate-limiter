@@ -1,10 +1,10 @@
-# Very short description of the package
+# Php Rate Limiter
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/trukes/php-rate-limiter.svg?style=flat-square)](https://packagist.org/packages/trukes/php-rate-limiter)
 [![Total Downloads](https://img.shields.io/packagist/dt/trukes/php-rate-limiter.svg?style=flat-square)](https://packagist.org/packages/trukes/php-rate-limiter)
 ![GitHub Actions](https://github.com/trukes/php-rate-limiter/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+PhpRateLimiter is a simple and flexible rate-limiting library for PHP. It allows you to manage access limits based on custom keys (such as users, IPs, etc.) and can be easily integrated with any injectable storage backend (e.g., Redis, MySQL, etc.). It supports both fixed and sliding time windows. Ideal for controlling API usage and preventing abuse.
 
 ## Installation
 
@@ -17,7 +17,28 @@ composer require trukes/php-rate-limiter
 ## Usage
 
 ```php
-// Usage description here
+use Trukes\PhpRateLimiter\PhpRateLimiter;
+use Psr\SimpleCache\CacheInterface;
+use Trukes\PhpRateLimiter\Support\Config;
+use Trukes\PhpRateLimiter\Exception\LimitExceededException;
+
+// Example with a PSR-16 compatible cache implementation
+$cache = // Your cache implementation (e.g., Redis, file-based cache, etc.)
+$config = new Config();
+
+// Instantiate the rate limiter
+$rateLimiter = new PhpRateLimiter($cache, $config);
+
+$key = 'user_123'; // Custom key (e.g., user ID, IP, etc.)
+
+try {
+    $rateLimiter->hit($key); // Increment the hit count
+} catch (LimitExceededException $e) {
+    echo 'Limit exceeded: ' . $e->getMessage();
+}
+
+// Reset the counter for a key
+$rateLimiter->reset($key);
 ```
 
 ### Testing
