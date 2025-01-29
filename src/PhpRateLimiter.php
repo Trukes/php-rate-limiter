@@ -12,9 +12,13 @@ use Trukes\PhpRateLimiter\Support\Hit;
 /**
  * @author Pedro Carmo
  *
- * A lightweight, flexible rate-limiting library for PHP. Manage access limits by user,
- * IP, or custom keys with support for sliding and fixed windows. Compatible with Redis,
- * MySQL, and file-based storage. Ideal for controlling API usage and preventing abuse.
+ * A lightweight, simple and flexible rate-limiting library for PHP.
+ * It allows you to manage access limits based on custom keys (such as users, IPs, etc.)
+ * using any injectable storage backend (e.g., Redis, MySQL, etc.).
+ * It supports both fixed and sliding time windows, and can be adapted to any storage system
+ * that implements the CacheInterface from PSR-16.
+ * Ideal for controlling API usage and preventing abuse.
+ *
  */
 final class PhpRateLimiter implements PhpRateLimiterInterface
 {
